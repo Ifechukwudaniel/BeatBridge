@@ -1,6 +1,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Abhaya+Libre:wght@800&family=Acme&family=Bakbak+One&family=Baloo+Bhai+2:wght@400;800&family=Changa&family=Martel+Sans:wght@700&family=Red+Hat+Display:wght@400;700&display=swap');
+
 
 :root,
 [data-theme] {
@@ -29,4 +31,22 @@ p {
 
 .btn.btn-ghost {
   @apply shadow-none;
+}
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s ease-in-out;
+}
+
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#4AFF01, #4AFF01)
+}
+
+.link-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%
 }
