@@ -24,6 +24,7 @@ module.exports = {
           success: "#34EEB6",
           warning: "#FFCF72",
           error: "#FF8863",
+          lightgreen: "#9DFF94",
 
           "--rounded-btn": "9999rem",
 
