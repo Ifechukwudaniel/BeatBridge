@@ -18,6 +18,13 @@
       "~~/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/login.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/login.jsx",
+    "pages/api/auth/callback/spotify.js",
+    "pages/api/auth/[...nextauth].js"
+  ],
   "exclude": ["node_modules"]
 }

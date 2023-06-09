@@ -8,7 +8,12 @@ const Home: NextPage = () => {
         <title>ARTIST | BEAT BRIDGE</title>
         <meta name="description" content="Created with 🏗 scaffold-eth-2" />
       </Head>
-      <section className="bg-[#000000]"></section>
+      <section
+        className="flex items-center justify-center bg-cover bg-center h-screen"
+        style={{ backgroundImage: `url("/assets/bg.png")`, backgroundColor: "#1A202C" }}
+      >
+        Drake SZA
+      </section>
     </>
   );
 };

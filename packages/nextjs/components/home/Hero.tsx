@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 /**
  * Home Page Hero Section
@@ -13,7 +14,9 @@ export const Hero = () => {
           </h1>
           <p className="font-abel"> Elevate your favorite artists while shaping the music scene of tomorrow.. </p>
           <div className="mt-10">
-            <button className="btn btn-md  btn-primary font-changa capitalize  text-sm px-12">Get Started Now</button>
+            <Link href="/login" className="btn btn-md  btn-primary font-changa capitalize  text-sm px-12">
+              Get Started Now
+            </Link>
           </div>
         </div>
       </div>
