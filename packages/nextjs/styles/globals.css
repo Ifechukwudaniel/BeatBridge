@@ -1,8 +1,8 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Abel&family=Abhaya+Libre:wght@800&family=Acme&family=Bakbak+One&family=Baloo+Bhai+2:wght@400;800&family=Changa&family=Martel+Sans:wght@700&family=Red+Hat+Display:wght@400;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Bakbak+One&family=Poppins:wght@300;400;700&family=Roboto:wght@400;700&display=swap");
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Abhaya+Libre:wght@800&family=Acme&family=Bakbak+One&family=Baloo+Bhai+2:wght@400;800&family=Changa&family=Martel+Sans:wght@700&family=Red+Hat+Display:wght@400;700&display=swap');
-
 
 :root,
 [data-theme] {
@@ -11,6 +11,14 @@
 
 body {
   min-height: 100vh;
+  background: #000;
+  color: #fff;
+}
+
+.dashboard {
+  font-family: "Poppins", sans-serif !important;
+  overflow: hidden;
+  height: 100vh;
 }
 
 h1,
@@ -39,14 +47,14 @@ p {
   background-size: 0 3px;
   background-position: 0 100%;
   background-repeat: no-repeat;
-  transition: background-size .5s ease-in-out;
+  transition: background-size 0.5s ease-in-out;
 }
 
 .link-underline-black {
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#4AFF01, #4AFF01)
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#4aff01, #4aff01);
 }
 
 .link-underline:hover {
   background-size: 100% 3px;
-  background-position: 0 100%
+  background-position: 0 100%;
 }
