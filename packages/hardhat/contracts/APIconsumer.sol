@@ -52,6 +52,8 @@ contract APIConsumer is ChainlinkClient, ERC1155 {
     function mint(address to, uint256 id, uint256 amount, bytes memory data) public {
         require(score > 50, "Score is not high enough to mint tokens");
         _mint(to, id, amount, data);
+        _setURI(id, ipfsData);  // set token URI to ipfsData after minting
+
     }
     
     function updateIPFSData(string memory newIPFSData) public onlyOwner {
