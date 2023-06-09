@@ -1,3 +1,4 @@
+//SPDX-License-Identifier Mit 
 pragma solidity ^0.8.0;
 
 import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
@@ -9,8 +10,10 @@ contract APIConsumer is ChainlinkClient, ERC1155 {
     address private oracle;
     bytes32 private jobId;
     uint256 private fee;
-
     uint256 private score;
+    string public ipfsData; //Declaring the ipfsData variable
+
+    address public owner;  // Declare the owner variable
 
     constructor(
         address _oracle,
@@ -26,15 +29,14 @@ contract APIConsumer is ChainlinkClient, ERC1155 {
         oracle = _oracle;
         jobId = _jobId;
         fee = _fee;
-    }
-
         owner = msg.sender; // Set the contract deployer as the owner
     }
-
+    
     modifier onlyOwner() {
         require(msg.sender == owner, "Only the owner can call this function");
         _;
     }
+
 ///score needs to be changed to proper param
     function requestScore(string memory url, string memory path) public returns (bytes32 requestId) {
         Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
