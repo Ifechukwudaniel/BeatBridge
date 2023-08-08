@@ -8,10 +8,10 @@ import AnimatedCube from "../AnimatedCube";
  */
 export const Hero = () => {
   return (
-    <div className="grid grid-cols-2  h-[95vh] justify-center p-5 md:p-8 lg:p-0 home-hero relative">
+    <div className="grid md:grid-cols-2  h-[95vh] justify-center p-5 md:p-8 lg:p-0 home-hero relative">
       <div className="flex flex-col  relative justify-center ">
-        <div className="absolute w-full lg:left-32 lg:top-48 lg:p-0">
-          <h1 className="font-bakbak-one text-5xl leading-[1.3]">
+        <div className="absolute w-full lg:left-32 lg:top-48 lg:p-0 top-10">
+          <h1 className="font-bakbak-one md:text-5xl text-3xl leading-[1.3]">
             Experience Music on a Deeper Level. Connect, Support, and Amplify Your Favourite Artists
           </h1>
           <p className="font-abel mt-6"> Elevate your favorite artists while shaping the music scene of tomorrow.. </p>

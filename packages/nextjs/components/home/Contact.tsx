@@ -10,7 +10,7 @@ export const Contact = () => {
   return (
     <div className="flex lg:flex-row flex-col p-5 md:p-8 lg:p-16 justify-between">
       <div className="flex flex-col lg:w-1/2 lg:mr-14 p-2 md:p-4 lg:p-7 relative  ">
-        <p className="font-baloo-bhai-2 text-primary tracking-widest uppercase">
+        <p className="font-baloo-bhai-2 text-primary tracking-widest uppercase text-[1rem] mb-4">
           Want to be part of a revolution in music interaction?
         </p>
         <h1 className="font-bakbak-one text-2xl">

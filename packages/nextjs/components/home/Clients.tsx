@@ -7,9 +7,9 @@ import Image from "next/image";
 export const Clients = () => {
   return (
     <section className="relative mt-16">
-      <div className="container mx-auto flex flex-col items-center text-center w-3/5 py-32">
+      <div className="container mx-auto flex flex-col items-center text-center md:w-3/5 w-full py-32 px-8 md:px-0">
         <p className="text-primary text-lg font-bold"> OUR TRACK RECORD</p>
-        <h1 className="text-4xl font-bold leading-[1.3]">
+        <h1 className="md:text-4xl text-3xl font-bold leading-[1.3]">
           Join us at BeatBridge and be part of a musical revolution where every beat, every share, and every connection
           matters.
         </h1>

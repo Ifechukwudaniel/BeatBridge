@@ -7,7 +7,7 @@ import Link from "next/link";
  */
 export const HomeFooter = () => {
   return (
-    <div className=" flex flex-row lg:flex-col p-5 md:p-8 mt-16 ">
+    <div className=" flex flex-col p-5 md:p-8 mt-16 ">
       {/*  <div className="h-28 w-96 object-cover  right-0  bg-[url('/assets/logo.png')] bg-[length:100%_100%] " /> */}
       <div className="container mx-auto">
         <Image src={"/assets/logo.svg"} alt="beatbridge logo" width={382} height={57} />
@@ -23,7 +23,7 @@ export const HomeFooter = () => {
         </div>
 
         {/* Links Column */}
-        <div className="w-full md:w-1/3 px-4 mb-4 md:mb-0 md:pl-16">
+        <div className="w-full md:w-1/3 mb-4 md:mb-0 md:pl-16 mt-6 md:mt-0">
           <h3 className="text-lg font-semibold mb-2">Pages For You</h3>
           <p className="text-sm leading-[1.5] text-[#CCCCCC]">Explore our pages.</p>
           <ul className="mt-12 text-sm grid grid-cols-2 text-[#cccccc]">
@@ -51,7 +51,7 @@ export const HomeFooter = () => {
         </div>
 
         {/* Connect with Us Column */}
-        <div className="w-full md:w-1/3 px-4">
+        <div className="w-full md:w-1/3 mt-6 md:mt-0">
           <h3 className="text-lg font-semibold mb-2">Connect with Us</h3>
           <p className="text-sm mb-2 text-[#cccccc]">
             Here are the official links to our social media platform. Feel free to reach out to us through any of the

@@ -7,9 +7,9 @@ import Link from "next/link";
 export const Team = () => {
   return (
     <section>
-      <div className="container mx-auto grid grid-cols-2 py-16 gap-6">
+      <div className="container mx-auto grid md:grid-cols-2 py-16 gap-6 md:px-0 px-10">
         <div>
-          <p className="text-primary uppercase font-bold"> OUR Team</p>
+          <p className="font-baloo-bhai-2 text-primary tracking-widest uppercase text-[1rem] mb-4"> OUR Team</p>
           <h2 className="text-3xl">The Brains Behind the Operation</h2>
           <p>
             At Beatbridge, we are proud to have a talented and diverse team of professionals dedicated to

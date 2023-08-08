@@ -7,7 +7,10 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Beat Bridge</title>
-        <meta name="description" content="Created with 🏗 scaffold-eth-2" />
+        <meta
+          name="description"
+          content="   Experience Music on a Deeper Level. Connect, Support, and Amplify Your Favourite Artists"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link

@@ -1,4 +1,5 @@
 import React, { FunctionComponent, MouseEventHandler, useCallback, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
@@ -49,12 +50,12 @@ export const HomeHeader = () => {
       <div className="sticky lg:static top-0 navbar bg-base-100 min-h-0 flex  justify-between flex-shrink-0  z-20 shadow-md py-5">
         <div className="navbar-start w-auto lg:w-1/2">
           <Link href="/" passHref className=" lg:flex items-center gap-2 ml-8 mr-6">
-            <div className="flex flex-col">
-              <span className=" font-martel-sans font-bold leading-10 tracking-widest text-2xl"> BEAT BRIDGE</span>
+            <div className="flex flex-col items-center justify-center w-[60%]">
+              <Image src={"/assets/logo.svg"} alt="beatbridge logo" width={382} height={57} />
             </div>
           </Link>
         </div>
-        <div className="navbar-end flex-grow mr-8">
+        <div className="navbar-end flex-grow mr-8 -mt-1">
           <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-3">{navLinks}</ul>
           <div className="lg:hidden dropdown" ref={burgerMenuRef}>
             <button
