@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>BEAT BRIDGE</title>
+        <title>Beat Bridge</title>
         <meta name="description" content="Created with 🏗 scaffold-eth-2" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -19,9 +19,9 @@ const Home: NextPage = () => {
         <HomeHeader />
         <Hero />
         <Services />
-        <Contact />
         <Clients />
         <Team />
+        <Contact />
         <HomeFooter />
       </section>
     </>

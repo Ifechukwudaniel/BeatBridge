@@ -40,7 +40,7 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
         avatar={BlockieAvatar}
         theme={isDarkTheme ? darkTheme() : lightTheme()}
       >
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen overflow-x-hidden">
           <main className="relative flex flex-col flex-1">
             <SessionProvider session={pageProps.session}>
               <Component {...pageProps} />

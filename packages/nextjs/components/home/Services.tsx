@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 
 /**
@@ -7,7 +8,7 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 export const Services = () => {
   return (
     <div className="">
-      <div className="flex flex-row  p-5 md:p-8 lg:p-16 justify-between h-[70vh]">
+      <div className="flex flex-row  p-5 md:p-8 lg:py-16 justify-between h-[70vh] container mx-auto ">
         <div className="flex flex-col lg:w-1/2 lg:mr-14 p-2 md:p-4 lg:p-7 relative  ">
           <p className="font-baloo-bhai-2 text-primary tracking-[.25em] font-light"> Connect </p>
           <h1 className="font-bakbak-one text-6xl">In Sync with the Sound</h1>
@@ -50,8 +51,8 @@ export const Services = () => {
       <div className="flex flex-row  p-5 md:p-8 lg:p-16 justify-between h-[70vh]">
         <div className="flex flex-col lg:w-1/2 lg:mr-14 p-2 md:p-4 lg:p-7 relative justify-center ">
           <p className="font-baloo-bhai-2 text-primary tracking-[.25em] font-light"> Track</p>
-          <h1 className="font-bakbak-one text-6xl">Follow the Frequency</h1>
-          <p className="font-abel text-lg ">
+          <h1 className="font-bakbak-one text-5xl">Follow the Frequency</h1>
+          <p className="font-abel text-lg text-justify ">
             The BeatBridge platform leverages cutting-edge technology to track user engagement, rewarding dedicated fans
             with NFTs that can be redeemed for exclusive merchandise, concert tickets, and unique experiences. The
             louder your support, the more you amplify your favorite artists - and the more rewards you earn
@@ -63,8 +64,8 @@ export const Services = () => {
           </div>
           <div className="w-64 h-64 bg-primary absolute z-10 blur-3xl opacity-20 bottom-10 -left-28 "> </div>
         </div>
-        <div className=" justify-center p-2 md:p-4 lg:py-0 lg:w-1/2 hidden lg:flex relative   ">
-          <div className=" absolute object-contain  w-10/12 h-full -top-12 right-20  bg-[url('/assets/track.png')] bg-[length:110%_110%]  " />
+        <div className=" justify-center p-2 md:p-4 lg:py-0 hidden lg:block relative -mt-16   ">
+          <Image src={"/assets/track.png"} alt="track 3d" width={774} height={712} className="transform scale-125" />
         </div>
       </div>
     </div>

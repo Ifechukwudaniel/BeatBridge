@@ -46,15 +46,15 @@ export const HomeHeader = () => {
 
   return (
     <>
-      <div className="sticky lg:static top-0 navbar bg-base-100 min-h-0 flex  justify-between flex-shrink-0  z-20 shadow-md">
+      <div className="sticky lg:static top-0 navbar bg-base-100 min-h-0 flex  justify-between flex-shrink-0  z-20 shadow-md py-5">
         <div className="navbar-start w-auto lg:w-1/2">
-          <Link href="/" passHref className=" lg:flex items-center gap-2 ml-4 mr-6">
+          <Link href="/" passHref className=" lg:flex items-center gap-2 ml-8 mr-6">
             <div className="flex flex-col">
               <span className=" font-martel-sans font-bold leading-10 tracking-widest text-2xl"> BEAT BRIDGE</span>
             </div>
           </Link>
         </div>
-        <div className="navbar-end flex-grow mr-4">
+        <div className="navbar-end flex-grow mr-8">
           <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-3">{navLinks}</ul>
           <div className="lg:hidden dropdown" ref={burgerMenuRef}>
             <button
