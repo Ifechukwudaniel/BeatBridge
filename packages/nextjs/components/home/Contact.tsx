@@ -10,16 +10,17 @@ export const Contact = () => {
   return (
     <div className="flex lg:flex-row flex-col p-5 md:p-8 lg:p-16 justify-between">
       <div className="flex flex-col lg:w-1/2 lg:mr-14 p-2 md:p-4 lg:p-7 relative  ">
-        <p className="font-baloo-bhai-2 text-primary tracking-widest uppercase">
-          Ready to take your project to the next level with?
+        <p className="font-baloo-bhai-2 text-primary tracking-widest uppercase text-[1rem] mb-4">
+          Want to be part of a revolution in music interaction?
         </p>
-        <h1 className="font-bakbak-one text-3xl">
-          Contact us today to discuss your project and learn more about how we can help you design, develop, and pitch a
-          trusted web3 brand.
+        <h1 className="font-bakbak-one text-2xl">
+          Whether you're a dedicated fan, a talented artist, or a potential investor, we're excited to hear from you.
+          Join our pre-launch waitlist to secure your spot in exploring achievement-based NFTs in the world of musical
+          artistry.
         </h1>
         <p className="font-abel">
-          We&apos;ll get back to you as soon as possible to schedule a consultation and discuss how we can support your
-          project.
+          For inquiries, partnerships, and investment opportunities, reach out to us at beatbridge@gmail.com. Let's
+          revolutionize the music industry together!
         </p>
         <div className="w-64 h-64 bg-primary absolute z-10 blur-3xl opacity-10 -bottom-10 -left-28 "></div>
       </div>

@@ -6,8 +6,11 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>BEAT BRIDGE</title>
-        <meta name="description" content="Created with 🏗 scaffold-eth-2" />
+        <title>Beat Bridge</title>
+        <meta
+          name="description"
+          content="   Experience Music on a Deeper Level. Connect, Support, and Amplify Your Favourite Artists"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -19,9 +22,9 @@ const Home: NextPage = () => {
         <HomeHeader />
         <Hero />
         <Services />
-        <Contact />
         <Clients />
         <Team />
+        <Contact />
         <HomeFooter />
       </section>
     </>

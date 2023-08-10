@@ -28,7 +28,7 @@ const Login = () => {
   return (
     <div
       className="flex items-center justify-center bg-cover bg-center h-screen"
-      style={{ backgroundImage: `url("/assets/bg.png")`, backgroundColor: "#1A202C" }}
+      style={{ backgroundImage: `url("/assets/bg.png")`, backgroundColor: "#00011e" }}
     >
       <Link
         href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
