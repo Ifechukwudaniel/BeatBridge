@@ -1,0 +1,6 @@
+# folders
+circuits
+contracts
+node_modules/
+# files
+**/*.json
