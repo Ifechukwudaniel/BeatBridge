@@ -9,6 +9,6 @@ interface MyUser {
 }
 
 export interface MySession extends Omit<DefaultSession, "user"> {
-  user?: MyUser;
+  user: MyUser;
   expires: string;
 }
