@@ -1,10 +1,11 @@
 import { HttpError } from "./HttpError";
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import { merge } from "lodash";
 import { Result, err, ok } from "neverthrow";
 
 export class HttpBase {
   protected urlBase = "/api";
+  protected axiosInstance: AxiosInstance;
 
   /**
    * Creates a new service instance.
@@ -12,6 +13,7 @@ export class HttpBase {
    */
   public constructor(path?: string) {
     this.urlBase = path ?? "/api";
+    this.axiosInstance = axios.create();
   }
 
   /**
@@ -25,17 +27,23 @@ export class HttpBase {
   }
 
   /**
+   * Set the default headers for all requests this service makes.
+   * @param headers A config object to merge onto the base config.
+   * @protected
+   */
+  protected setHeaders(headers: Record<string, string>) {
+    this.axiosInstance.defaults.headers = merge(this.axiosInstance.defaults.headers, headers);
+  }
+
+  /**
    * Make a GET request.
    * @param path A path to append to the base url.
    * @param configOverrides A config object to merge onto the base config.
    * @protected
    */
-  protected async get<T>(
-    path = "",
-    configOverrides: AxiosRequestConfig | undefined = undefined,
-  ): Promise<Result<T, HttpError>> {
+  async get<T>(path = "", configOverrides: AxiosRequestConfig | undefined = undefined): Promise<Result<T, HttpError>> {
     return await this.requestResultWrapper<T>(path, configOverrides, (fullPath, config) => {
-      return axios.get(fullPath, config);
+      return this.axiosInstance.get(fullPath, config);
     });
   }
 
@@ -46,13 +54,13 @@ export class HttpBase {
    * @param configOverrides A config object to merge onto the base config.
    * @protected
    */
-  protected async post<T>(
+  async post<T>(
     path = "",
     data: unknown = undefined,
     configOverrides: AxiosRequestConfig | undefined = undefined,
   ): Promise<Result<T, HttpError>> {
     return await this.requestResultWrapper<T>(path, configOverrides, (fullPath, config) => {
-      return axios.post(fullPath, data, config);
+      return this.axiosInstance.post(fullPath, data, config);
     });
   }
 
@@ -63,13 +71,13 @@ export class HttpBase {
    * @param configOverrides A config object to merge onto the base config.
    * @protected
    */
-  protected async put<T>(
+  async put<T>(
     path = "",
     data: unknown = undefined,
     configOverrides: AxiosRequestConfig | undefined = undefined,
   ): Promise<Result<T, HttpError>> {
     return await this.requestResultWrapper<T>(path, configOverrides, (fullPath, config) => {
-      return axios.put(fullPath, data, config);
+      return this.axiosInstance.put(fullPath, data, config);
     });
   }
 
@@ -86,7 +94,7 @@ export class HttpBase {
     configOverrides: AxiosRequestConfig | undefined = undefined,
   ): Promise<Result<T, HttpError>> {
     return await this.requestResultWrapper<T>(path, configOverrides, (fullPath, config) => {
-      return axios.patch(fullPath, data, config);
+      return this.axiosInstance.patch(fullPath, data, config);
     });
   }
 
@@ -101,7 +109,7 @@ export class HttpBase {
     configOverrides: AxiosRequestConfig | undefined = undefined,
   ): Promise<Result<T, HttpError>> {
     return await this.requestResultWrapper<T>(path, configOverrides, (fullPath, config) => {
-      return axios.delete(fullPath, config);
+      return this.axiosInstance.delete(fullPath, config);
     });
   }
 
