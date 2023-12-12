@@ -3665,6 +3665,7 @@ __metadata:
     "@heroicons/react": ^2.0.11
     "@rainbow-me/rainbowkit": ^0.11.0
     "@trivago/prettier-plugin-sort-imports": ^4.1.1
+    "@types/lodash": ^4
     "@types/next-auth": ^3.15.0
     "@types/node": ^17.0.35
     "@types/react": ^18.0.9
@@ -3682,6 +3683,8 @@ __metadata:
     eslint-config-prettier: ^8.5.0
     eslint-plugin-prettier: ^4.2.1
     ethers: ^5.0.0
+    lodash: ^4.17.21
+    neverthrow: ^6.1.0
     next: ^13.1.6
     next-auth: ^4.22.1
     nextjs-progressbar: ^0.0.16
@@ -4401,6 +4404,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: e009a2bfb50e90ca9b7c6e8f648f8464067271fd99116f881073fa6fa76dc8d0133181dd65e6614d5fb1220d671d67b0124aef7d97dc02d7e342ab143a47779d
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4":
+  version: 4.14.202
+  resolution: "@types/lodash@npm:4.14.202"
+  checksum: a91acf3564a568c6f199912f3eb2c76c99c5a0d7e219394294213b3f2d54f672619f0fde4da22b29dc5d4c31457cd799acc2e5cb6bd90f9af04a1578483b6ff7
   languageName: node
   linkType: hard
 
@@ -13793,6 +13803,13 @@ __metadata:
   version: 2.0.2
   resolution: "netmask@npm:2.0.2"
   checksum: c65cb8d3f7ea5669edddb3217e4c96910a60d0d9a4b52d9847ff6b28b2d0277cd8464eee0ef85133cdee32605c57940cacdd04a9a019079b091b6bba4cb0ec22
+  languageName: node
+  linkType: hard
+
+"neverthrow@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "neverthrow@npm:6.1.0"
+  checksum: 75e04c5fecd8d7089085ca443d3ca67691947be2111aa67271082d495465d249002a6387ec61c12b6148304092e6ef5b1d00629756f3436b8686ea30351f1399
   languageName: node
   linkType: hard
 

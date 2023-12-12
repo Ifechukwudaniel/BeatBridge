@@ -24,6 +24,8 @@
     "daisyui": "^2.31.0",
     "dotenv": "^16.1.4",
     "ethers": "^5.0.0",
+    "lodash": "^4.17.21",
+    "neverthrow": "^6.1.0",
     "next": "^13.1.6",
     "next-auth": "^4.22.1",
     "nextjs-progressbar": "^0.0.16",
@@ -42,6 +44,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/lodash": "^4",
     "@types/node": "^17.0.35",
     "@types/react": "^18.0.9",
     "@types/react-blockies": "^1.4.1",
