@@ -5,7 +5,8 @@
   "workspaces": {
     "packages": [
       "packages/hardhat",
-      "packages/nextjs"
+      "packages/nextjs",
+      "packages/noir"
     ]
   },
   "scripts": {
@@ -23,6 +24,11 @@
     "next:lint": "yarn workspace @se-2/nextjs lint",
     "next:format": "yarn workspace @se-2/nextjs format",
     "next:check-types": "yarn workspace @se-2/nextjs check-types",
+    "noir:export": "yarn noir:export-json && yarn noir:export-solidity",
+    "noir:export-json": "yarn workspace @se-2/noir export-json",
+    "noir:export-solidity": "yarn workspace @se-2/noir export-solidity",
+    "noir:lint": "yarn workspace @se-2/noir lint",
+    "noir:lint-staged": "yarn workspace @se-2/noir lint-staged",
     "postinstall": "husky install",
     "precommit": "lint-staged",
     "vercel": "yarn workspace @se-2/nextjs vercel",
