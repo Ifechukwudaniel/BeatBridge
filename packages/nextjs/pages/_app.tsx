@@ -33,23 +33,23 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
   }, [isDarkMode]);
 
   return (
-    <WagmiConfig client={wagmiClient}>
-      <NextNProgress />
-      <RainbowKitProvider
-        chains={appChains.chains}
-        avatar={BlockieAvatar}
-        theme={isDarkTheme ? darkTheme() : lightTheme()}
-      >
-        <div className="flex flex-col min-h-screen overflow-x-hidden">
-          <main className="relative flex flex-col flex-1">
-            <SessionProvider session={pageProps.session}>
+    <SessionProvider session={pageProps.session}>
+      <WagmiConfig client={wagmiClient}>
+        <NextNProgress />
+        <RainbowKitProvider
+          chains={appChains.chains}
+          avatar={BlockieAvatar}
+          theme={isDarkTheme ? darkTheme() : lightTheme()}
+        >
+          <div className="flex flex-col min-h-screen overflow-x-hidden">
+            <main className="relative flex flex-col flex-1">
               <Component {...pageProps} />
-            </SessionProvider>
-          </main>
-        </div>
-        <Toaster />
-      </RainbowKitProvider>
-    </WagmiConfig>
+            </main>
+          </div>
+          <Toaster />
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </SessionProvider>
   );
 };
 

@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { authOptions } from "./api/auth/[...nextauth]";
+import { GetServerSideProps } from "next";
+import { getServerSession } from "next-auth/next";
 import Card from "~~/components/Card";
 import Modal from "~~/components/Modal";
 import TabButton from "~~/components/TabButton";
 import DashboardLayout from "~~/components/dashboard/DashboardLayout";
+import { MySession } from "~~/types/session";
+import { isAuthenticated } from "~~/utils/beat-bridge/isAuthenticated";
 
 type CardData = {
   title: string;
@@ -78,24 +83,6 @@ const DashboardPage: React.FC = () => {
           return true;
         });
 
-  /*  useEffect(() => {
-    const hash = window.location.hash;
-    let token = window.localStorage.getItem("token");
-
-    if (!token && hash) {
-      token = hash
-        .substring(1)
-        .split("&")
-        .find(elem => elem.startsWith("access_token"))
-        .split("=")[1];
-
-      window.location.hash = "";
-      window.localStorage.setItem("token", token);
-    }
-
-    setToken(token || "");
-  }, []); */
-
   const logout = () => {
     /*     setToken("");
      */ window.localStorage.removeItem("token");
@@ -160,3 +147,19 @@ const DashboardPage: React.FC = () => {
 };
 
 export default DashboardPage;
+
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  const session = (await getServerSession(req, res, authOptions)) as MySession | null;
+  if (!(await isAuthenticated(session))) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
