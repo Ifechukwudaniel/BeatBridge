@@ -9,6 +9,8 @@ import { Toaster } from "react-hot-toast";
 import { useDarkMode } from "usehooks-ts";
 import { WagmiConfig } from "wagmi";
 import { BlockieAvatar } from "~~/components/scaffold-eth";
+import PlayerProvider from "~~/context/PlayerContext";
+import { SpotifyProvider } from "~~/context/SpotifyContext";
 import { useNativeCurrencyPrice } from "~~/hooks/scaffold-eth";
 import { useGlobalState } from "~~/services/store/store";
 import { wagmiClient } from "~~/services/web3/wagmiClient";
@@ -43,7 +45,11 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
         >
           <div className="flex flex-col min-h-screen overflow-x-hidden">
             <main className="relative flex flex-col flex-1">
-              <Component {...pageProps} />
+              <SpotifyProvider>
+                <PlayerProvider>
+                  <Component {...pageProps} />
+                </PlayerProvider>
+              </SpotifyProvider>
             </main>
           </div>
           <Toaster />
