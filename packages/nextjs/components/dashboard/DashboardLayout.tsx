@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../spotify/Header";
 import Sidebar from "./Sidebar";
 
 interface DashboardLayoutProps {
@@ -13,7 +13,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
 
       <div className="flex flex-col flex-1">
         <Header />
-        <main className="px-12 py-8 bg-[#111315] min-h-full h-full overflow-y-auto">{children}</main>
+        <main className="px-12 py-8 bg-black min-h-full h-full overflow-y-auto pb-32">{children}</main>
       </div>
     </div>
   );

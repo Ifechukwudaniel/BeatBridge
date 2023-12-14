@@ -18,10 +18,7 @@ export default function SearchInput() {
   }
 
   return (
-    <form
-      className="flex items-center justify-between w-full gap-3 px-3 py-1.5 bg-white rounded-full"
-      onSubmit={handleSubmit}
-    >
+    <form className="flex items-center justify-between w-full gap-3 px-3 py-2 bg-black " onSubmit={handleSubmit}>
       <IoSearchOutline className="text-2xl text-[#121212]" />
 
       <input

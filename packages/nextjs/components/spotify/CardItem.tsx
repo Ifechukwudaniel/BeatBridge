@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { RiMusic2Fill } from "react-icons/ri";
 
@@ -23,12 +22,14 @@ export default function CardItem({
 }: IProps) {
   return (
     <Link href={`/${type}/${id}`} passHref>
-      <div className="transition duration-300 p-4 rounded cursor-pointer hover:bg-[#282828] bg-paper">
+      <div className="transition duration-300 p-3 rounded cursor-pointer hover:bg-[#282828] bg-paper border-2 border-[#ffffff50]">
         {images.length > 0 ? (
-          <Image
+          <img
             src={images[0].url}
             alt={altTitle}
-            className={`object-cover w-full h-36  ${imageRounded ? "rounded-full" : "rounded"}`}
+            width={50}
+            height={50}
+            className={`object-cover w-full h-36 rounded ${imageRounded ? "" : ""}`}
           />
         ) : (
           <div className="w-full h-40">
@@ -36,7 +37,7 @@ export default function CardItem({
           </div>
         )}
         <h3 className="mt-5 font-bold truncate">{heading}</h3>
-        {subheading && <h6 className="text-sm truncate text-gray">{subheading}</h6>}
+        {subheading && <h6 className="text-sm truncate text-gray capitalize">{subheading}</h6>}
       </div>
     </Link>
   );

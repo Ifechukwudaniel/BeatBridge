@@ -3,25 +3,25 @@ import Link from "next/link";
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="bg-[#1A1D1F] text-[#ffffff90] w-1/6 px-6 ">
+    <div className="bg-[#00011e] text-[#ffffff90] w-1/6 px-6 ">
       <Link className="logo py-6 cursor-pointer" href="/">
         <img src="/assets/logo.png" alt="Logo" className="pt-6" />
       </Link>
-      <ul className="ml-6 bg-[#1A1D1F] h-[100%] py-12">
+      <ul className="ml-6 bg-[#00011e] h-[100%] py-12">
         <li className="mb-8">
-          <a href="#">Dashboard</a>
+          <Link href="/dashboard/artists">Your Artists</Link>
         </li>
         <li className="mb-8">
-          <a href="#">Access</a>
+          <Link href="/search">Discover</Link>
         </li>
         <li className="mb-8">
-          <a href="#">Followers</a>
+          <Link href="#">Followers</Link>
         </li>
         <li className="mb-8">
-          <a href="#">Rewards</a>
+          <Link href="#">Rewards</Link>
         </li>
         <li className="mb-8">
-          <a href="#">Messages</a>
+          <Link href="#">Messages</Link>
         </li>
       </ul>
     </div>

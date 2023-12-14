@@ -47,13 +47,13 @@ const ClaimNFT: React.FC = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-screen-lg rounded bg-black">
+      <div className="w-full max-w-screen-lg rounded-lg bg-black">
         {tasks.map((task, index) => (
-          <div key={index} className=" p-6 px-6 flex items-center justify-between gap-12">
-            <h3 className="text-xl font-bold">{task.name}</h3>
-            <p className="text-xl text-center font-light">{task.description}</p>
+          <div key={index} className=" p-6 px-6 flex items-center  justify-between gap-12">
+            <h3 className="w-[20%] font-bold uppercase">{task.name}</h3>
+            <p className="text-xl font-light text-center">{task.description}</p>
 
-            <button className="bg-[#856F7A] text-white px-4 py-2 rounded" onClick={() => openModal(task)}>
+            <button className="bg-[#5D41A8] text-white px-4 py-2 rounded" onClick={() => openModal(task)}>
               Claim
             </button>
           </div>
