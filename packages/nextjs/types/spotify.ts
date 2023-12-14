@@ -30,7 +30,7 @@ export interface Artist {
 export interface Track {
   id: string;
   name: string;
-  album: Album;
+  album?: Album;
   artists: [Artist];
   duration_ms: number;
   preview_url: string;
@@ -70,4 +70,10 @@ export interface SearchResults {
   tracks?: {
     items: Track[];
   };
+}
+export interface Category {
+  id: string;
+  icons: Image[];
+  href: string;
+  name: string;
 }
