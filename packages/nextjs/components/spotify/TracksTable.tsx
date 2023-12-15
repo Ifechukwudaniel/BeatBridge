@@ -77,11 +77,9 @@ export default function TracksTable({ tracks, noAlbum = false, noArtist = false 
                       <span className="truncate ">
                         {track.artists.map((artist, index) => (
                           <Link key={artist.id + track.id} href={`/artist/${artist.id}`}>
-                            <a>
-                              <span className="hover:text-white hover:underline">
-                                {index !== 0 ? `, ${artist.name}` : artist.name}
-                              </span>
-                            </a>
+                            <span className="hover:text-white hover:underline">
+                              {index !== 0 ? `, ${artist.name}` : artist.name}
+                            </span>
                           </Link>
                         ))}
                       </span>
@@ -93,8 +91,9 @@ export default function TracksTable({ tracks, noAlbum = false, noArtist = false 
 
             {!noAlbum && (
               <div className="flex items-center w-10/12 col-span-4 my-3 text-sm text-gray">
-                <Link href={`/album/${track.album?.id || ""}`}>
-                  <a className="truncate hover:text-white hover:underline">{track.album?.name || ""}</a>
+                <Link className="truncate hover:text-white hover:underline" href={`/album/${track.album?.id || ""}`}>
+                  {" "}
+                  {track.album?.name || ""}{" "}
                 </Link>
               </div>
             )}

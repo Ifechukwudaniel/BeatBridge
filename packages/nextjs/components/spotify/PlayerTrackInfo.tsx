@@ -15,9 +15,7 @@ export default function PlayerTrackInfo({ currentTrack }: IProps) {
       <div className="max-w-full">
         <h4 className="text-sm truncate">{currentTrack?.name}</h4>
         <Link href={`/artist/${currentTrack?.artists[0].id}`}>
-          <a>
-            <h5 className="text-xs text-gray">{currentTrack?.artists[0].name}</h5>
-          </a>
+          <h5 className="text-xs text-gray">{currentTrack?.artists[0].name}</h5>
         </Link>
       </div>
       <div>

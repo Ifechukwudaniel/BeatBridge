@@ -54,6 +54,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
     };
   }
 
-  const categories = await customGet("https://api.spotify.com/v1/browse/categories?limit=50&country=IN", session);
+  // const country = ctx.req.headers.get("cf-ipcountry") ?? "";
+  const categories = await customGet("https://api.spotify.com/v1/browse/categories?limit=50&country=NG", session);
   return { props: { categories } };
 };

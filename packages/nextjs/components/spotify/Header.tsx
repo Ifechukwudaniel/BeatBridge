@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { RainbowKitCustomConnectButton } from "../scaffold-eth";
 import CollectionTabs from "./CollectionTabs";
 import SearchInput from "./SearchInput";
 import { signOut, useSession } from "next-auth/react";
@@ -47,6 +48,7 @@ export default function Header() {
       </div>
 
       <div className="flex items-center gap-6">
+        <RainbowKitCustomConnectButton />
         <div className="flex items-center gap-3 py-2 pl-2 pr-4 bg-black rounded-full bg-opacity-70">
           {session?.user?.picture === undefined ? (
             <AiOutlineUser className="bg-[#333333] p-1 rounded-full text-2xl" />
@@ -59,7 +61,6 @@ export default function Header() {
           )}
           <span className="text-sm font-bold tracking-wide">{session?.user?.name}</span>
         </div>
-
         <div>
           <button
             className="flex items-center justify-center bg-black bg-opacity-70 rounded-full h-10 w-10 hover:bg-[#181818] focus:outline-none cursor-pointer"

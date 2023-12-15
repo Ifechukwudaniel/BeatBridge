@@ -13,7 +13,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
 
       <div className="flex flex-col flex-1">
         <Header />
-        <main className="px-12 py-8 bg-black min-h-full h-full overflow-y-auto pb-32">{children}</main>
+        <main className="px-12 py-8 bg-black min-h-full h-full overflow-y-auto pb-20">{children}</main>
       </div>
     </div>
   );
