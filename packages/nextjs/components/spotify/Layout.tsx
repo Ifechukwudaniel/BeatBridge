@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import PreviewPlayer from "./PreviewPlayer";
 
 interface IProps {
   children: any;
@@ -15,6 +16,7 @@ export default function Layout({ children, title }: IProps) {
         <title>{title}</title>
       </Head>
       <section className={`w-full ${router.pathname === "/login" ? "" : ""}`}>{children}</section>
+      <PreviewPlayer />
     </>
   );
 }

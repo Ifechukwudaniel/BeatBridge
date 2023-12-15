@@ -1,4 +1,4 @@
-import styles from "../styles/ProgressBar.module.css";
+import styles from "../../styles/PlayerBar.module.css";
 import { IoRepeat, IoShuffle } from "react-icons/io5";
 import { MdPause, MdPlayArrow, MdSkipNext, MdSkipPrevious } from "react-icons/md";
 import { usePlayer } from "~~/context/PlayerContext";
