@@ -55,7 +55,7 @@ export default function TracksTable({ tracks, noAlbum = false, noArtist = false 
                 {(!noAlbum || noArtist) && (
                   <div className="flex-shrink-0 w-10 h-10">
                     <img
-                      src={track.album.images?.[0].url || " "}
+                      src={track.album?.images?.[0].url || " "}
                       alt={track.name}
                       className="object-contain w-10 h-10"
                     />
@@ -93,8 +93,8 @@ export default function TracksTable({ tracks, noAlbum = false, noArtist = false 
 
             {!noAlbum && (
               <div className="flex items-center w-10/12 col-span-4 my-3 text-sm text-gray">
-                <Link href={`/album/${track.album.id}`}>
-                  <a className="truncate hover:text-white hover:underline">{track.album.name}</a>
+                <Link href={`/album/${track.album?.id || ""}`}>
+                  <a className="truncate hover:text-white hover:underline">{track.album?.name || ""}</a>
                 </Link>
               </div>
             )}

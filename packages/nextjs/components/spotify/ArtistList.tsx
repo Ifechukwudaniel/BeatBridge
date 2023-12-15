@@ -16,7 +16,7 @@ export default function ArtistList({ artists }: IProps) {
           heading={artist.name}
           images={artist.images}
           altTitle={artist.name}
-          subheading="Artist"
+          subheading={artist.genres && artist.genres.length > 0 ? artist.genres[0] : "artist"}
           imageRounded
           type="artist"
         />

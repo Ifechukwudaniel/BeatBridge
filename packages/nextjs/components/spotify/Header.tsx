@@ -26,7 +26,7 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between w-full p-4 pl-10 bg-[#111011]">
+    <header className="sticky top-0 z-50 flex items-center justify-between w-full p-4 pl-10 bg-[#00011e]">
       <div className="flex items-center gap-10 w-[32rem]">
         <div className="flex items-center gap-3">
           <button
