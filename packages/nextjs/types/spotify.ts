@@ -40,7 +40,7 @@ export interface PlaylistType {
   description?: string;
   id: string;
   followers?: {
-    total?: number;
+    total: number;
   };
   images?: [Image];
   name: string;

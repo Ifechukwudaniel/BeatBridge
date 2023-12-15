@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import Link from "next/link";
-import { useSpotify } from "../../../context/SpotifyContext";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import DashboardLayout from "~~/components/dashboard/DashboardLayout";
@@ -9,6 +8,7 @@ import ArtistList from "~~/components/spotify/ArtistList";
 import Heading from "~~/components/spotify/Heading";
 import Layout from "~~/components/spotify/Layout";
 import PlaylistList from "~~/components/spotify/PlaylistList";
+import { useSpotify } from "~~/context/SpotifyContext";
 import { MySession } from "~~/types/session";
 import { SearchResults, Track } from "~~/types/spotify";
 import { customGet } from "~~/utils/beat-bridge/customGet";
