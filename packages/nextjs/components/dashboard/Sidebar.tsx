@@ -17,6 +17,9 @@ const Sidebar: React.FC = () => {
         <li className="mb-8">
           <Link href="/playlists"> Your Playlists</Link>
         </li>
+        <li className="mb-8">
+          <Link href="/wrapped">Wrapped</Link>
+        </li>
       </ul>
     </div>
   );
