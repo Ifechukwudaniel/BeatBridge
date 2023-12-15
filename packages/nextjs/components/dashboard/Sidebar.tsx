@@ -9,19 +9,13 @@ const Sidebar: React.FC = () => {
       </Link>
       <ul className="ml-6 bg-[#00011e] h-[100%] py-12">
         <li className="mb-8">
+          <Link href="/search"> Discovery </Link>
+        </li>
+        <li className="mb-8">
           <Link href="/dashboard/artists">Your Artists</Link>
         </li>
         <li className="mb-8">
-          <Link href="/search">Discover</Link>
-        </li>
-        <li className="mb-8">
-          <Link href="#">Followers</Link>
-        </li>
-        <li className="mb-8">
-          <Link href="#">Rewards</Link>
-        </li>
-        <li className="mb-8">
-          <Link href="#">Messages</Link>
+          <Link href="/playlists"> Your Playlists</Link>
         </li>
       </ul>
     </div>
