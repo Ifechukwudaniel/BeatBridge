@@ -15,7 +15,7 @@ interface IProps {
 
 export default function FollowedArtists({ followedArtists }: IProps) {
   return (
-    <Layout title="Spotify - Your Library">
+    <Layout title="Beat Bridge - Your Library">
       <DashboardLayout>
         <Heading text="Your Artists" />
         <ArtistList artists={followedArtists} />

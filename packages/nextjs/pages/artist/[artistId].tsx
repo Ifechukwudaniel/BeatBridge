@@ -56,7 +56,7 @@ export default function SingleArtist({
   isArtistLiked();
   return (
     <DashboardLayout>
-      <Layout title={`Spotify - ${artist?.name}`}>
+      <Layout title={`Beat Bridge - ${artist?.name}`}>
         <div className="bg-[#00011e] rounded-lg w-full text-[#A0AEC0] p-6 relative mt-16">
           <div className="top-0 absolute left-[50%] transform translate-x-[-50%] translate-y-[-50%]">
             {artist.images && artist.images?.length > 0 ? (

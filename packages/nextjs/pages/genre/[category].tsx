@@ -32,7 +32,7 @@ export default function CategoryPlaylists({ categoryName, playlists }: IProps) {
 
   return (
     <DashboardLayout>
-      <Layout title={`Spotify - ${capitalizedCategory}`}>
+      <Layout title={`Beat Bridge - ${capitalizedCategory}`}>
         <Heading text={categoryName || ""} className="capitalize" />
         <PlaylistList playlists={playlists?.items} />
       </Layout>
