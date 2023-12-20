@@ -88,24 +88,21 @@ export default function SingleArtist({
                 </div>
               </div>
 
-              <div>
-                <button
-                  className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
-                    userFollowsArtist ? "hidden" : ""
-                  }`}
-                >
-                  Follow
-                </button>
-              </div>
-              <div>
-                <button
-                  className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
-                    userFollowsArtist ? "" : "hidden"
-                  }`}
-                >
-                  Unfollow
-                </button>
-              </div>
+              <button
+                className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
+                  userFollowsArtist ? "hidden" : ""
+                }`}
+              >
+                Follow
+              </button>
+
+              <button
+                className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
+                  userFollowsArtist ? "" : "hidden"
+                }`}
+              >
+                Unfollow
+              </button>
             </div>
 
             <div className="text-center py-8">

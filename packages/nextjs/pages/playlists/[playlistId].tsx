@@ -32,7 +32,7 @@ export default function Playlist({ playlist }: IProps) {
                 <h5 className="text-xs font-bold uppercase">{playlist.type}</h5>
                 <h2 className="text-5xl font-bold">{playlist.name}</h2>
 
-                <p className="w-full text-xs leading-5">{parse(playlist.description || "")}</p>
+                <p className="w-full text-xs leading-5">{parse(playlist.description || "Playlist")}</p>
 
                 <div className="flex items-center gap-5 text-sm">
                   <span className="font-bold">{playlist.owner?.display_name}</span>
