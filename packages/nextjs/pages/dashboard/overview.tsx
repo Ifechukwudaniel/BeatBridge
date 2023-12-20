@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import DashboardLayout from "~~/components/dashboard/DashboardLayout";
@@ -15,15 +14,13 @@ interface IProps {
 }
 
 export default function FollowedArtists({ topArtists }: IProps) {
-  const [timeRange, setTimeRange] = useState("short_term");
-
   return (
     <Layout title="Beat Bridge - Your Library">
       <DashboardLayout>
         <Heading text="Your Artists" />
         <select
           name="time-range"
-          onChange={e => setTimeRange(e.target.value)}
+          onChange={e => e.target.value}
           className="mx-2 pr-1 bg-transparent border-none rounded cursor-pointer text-base p-2 "
         >
           <option className="text-black" value="short_term">
