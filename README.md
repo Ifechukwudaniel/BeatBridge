@@ -52,10 +52,10 @@ To create a secret key, open your terminal, run the command below, and copy the 
 ``` openssl rand -base64 32 ```
 
 ```
-SPOTIFY_CLIENT_SECRET=781ec8bfbbe3403d9c9acaa15699837b
-SPOTIFY_CLIENT_ID=723bfc611600444395db4ba9f7fd7e48
+SPOTIFY_CLIENT_SECRET=
+SPOTIFY_CLIENT_ID=
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=koCNMnSVyhNobUJEYrQ0ffiZb47bsn8XNzy3DhkFBrU=
+NEXTAUTH_SECRET=
 ```
 
 5. On a third terminal, start your NextJS app:
