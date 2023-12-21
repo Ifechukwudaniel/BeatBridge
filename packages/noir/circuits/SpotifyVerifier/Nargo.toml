@@ -1,7 +1,7 @@
 [package]
-name = "spotifyVerifier"
+name = "SpotifyVerifier"
 type = "bin"
-authors = [""]
+authors = ["Ifechukwu Daniel"]
 compiler_version = "0.10.5"
 
 [dependencies]
