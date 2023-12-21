@@ -22,7 +22,7 @@ export default function CardItem({
 }: IProps) {
   return (
     <Link href={`/${type}/${id}`} passHref>
-      <div className="transition duration-300 p-3 rounded cursor-pointer hover:bg-[#282828] bg-paper border-2 border-[#ffffff50]">
+      <div className="transition duration-300 p-3 rounded cursor-pointer hover:bg-[#282828] bg-[#00000090] border-2 border-[#ffffff30]">
         {images.length > 0 ? (
           <img
             src={images[0].url}
