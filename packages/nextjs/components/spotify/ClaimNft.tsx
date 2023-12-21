@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface Task {
   name: string;
@@ -6,7 +7,7 @@ interface Task {
   imageUrl: string;
 }
 
-const ClaimNFT: React.FC = () => {
+export default function ClaimNFT() {
   const tasks: Task[] = [
     {
       name: "Groupie",
@@ -68,8 +69,8 @@ const ClaimNFT: React.FC = () => {
         >
           <div className="bg-[#1A1D1F] p-32 min-w-lg mx-auto rounded-lg text-center">
             <h3 className="text-2xl">Congratulations!</h3>
-            <img src={selectedTask.imageUrl} alt={selectedTask.name} className="w-64 h-64 object-contain mb-4" />
-
+            <Image src={selectedTask.imageUrl} alt={selectedTask.name} className="w-64 h-64 object-contain mb-4" />
+            ``
             <h3 className="text-2xl font-bold mb-4">{selectedTask.name}</h3>
             <button className="bg-[#9DFF94] text-black px-8 py-2" onClick={closeModal}>
               Mint
@@ -79,6 +80,4 @@ const ClaimNFT: React.FC = () => {
       )}
     </div>
   );
-};
-
-export default ClaimNFT;
+}
