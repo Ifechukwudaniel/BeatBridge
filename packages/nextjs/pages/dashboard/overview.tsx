@@ -13,9 +13,9 @@ interface IProps {
   topArtists: Artist[];
 }
 
-export default function ToArtists({ topArtists }: IProps) {
+export default function FollowedArtists({ topArtists }: IProps) {
   return (
-    <Layout title="Beat Bridge - Your Wrapped">
+    <Layout title="Beat Bridge - Your Library">
       <DashboardLayout>
         <Heading text="Your Artists" />
         <select
@@ -50,7 +50,8 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
       },
     };
   }
-  const timeRange = ctx.query.time_range || "long_term";
+
+  const timeRange = ctx.query.time_range || "short_term";
 
   const topArtists = await customGet(
     `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}&limit=50`,

@@ -47,7 +47,7 @@ const ClaimNFT: React.FC = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-screen-lg rounded-lg bg-black">
+      <div className="w-full max-w-screen-lg rounded-lg bg-[#00000090]">
         {tasks.map((task, index) => (
           <div key={index} className=" p-6 px-6 flex items-center  justify-between gap-12">
             <h3 className="w-[20%] font-bold uppercase">{task.name}</h3>
@@ -59,7 +59,7 @@ const ClaimNFT: React.FC = () => {
           </div>
         ))}
       </div>
-
+      f
       {selectedTask && (
         <div
           className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 ${
@@ -68,12 +68,11 @@ const ClaimNFT: React.FC = () => {
         >
           <div className="bg-[#1A1D1F] p-32 min-w-lg mx-auto rounded-lg text-center">
             <h3 className="text-2xl">Congratulations!</h3>
+            <button onClick={closeModal}>Close</button>
             <img src={selectedTask.imageUrl} alt={selectedTask.name} className="w-64 h-64 object-contain mb-4" />
 
             <h3 className="text-2xl font-bold mb-4">{selectedTask.name}</h3>
-            <button className="bg-[#9DFF94] text-black px-8 py-2" onClick={closeModal}>
-              Mint
-            </button>
+            <button className="bg-[#9DFF94] text-black px-8 py-2">Mint</button>
           </div>
         </div>
       )}

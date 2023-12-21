@@ -11,7 +11,7 @@ export default function Login() {
       style={{ backgroundImage: `url("/assets/bg.png")`, backgroundColor: "#00011e" }}
     >
       <button className="bg-[#9DFF94] py-4 px-8 font-bold rounded-full text-black" onClick={handleLogin}>
-        Login to Spotify
+        Login with Spotify
       </button>
     </div>
   );

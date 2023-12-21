@@ -88,24 +88,21 @@ export default function SingleArtist({
                 </div>
               </div>
 
-              <div>
-                <button
-                  className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
-                    userFollowsArtist ? "hidden" : ""
-                  }`}
-                >
-                  Follow
-                </button>
-              </div>
-              <div>
-                <button
-                  className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
-                    userFollowsArtist ? "" : "hidden"
-                  }`}
-                >
-                  Unfollow
-                </button>
-              </div>
+              <button
+                className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
+                  userFollowsArtist ? "hidden" : ""
+                }`}
+              >
+                Follow
+              </button>
+
+              <button
+                className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
+                  userFollowsArtist ? "" : "hidden"
+                }`}
+              >
+                Unfollow
+              </button>
             </div>
 
             <div className="text-center py-8">
@@ -199,8 +196,8 @@ export default function SingleArtist({
         )}
 
         {relatedArtists?.artists.length > 0 && (
-          <div className="mt-12">
-            <Heading text="Fans also like" />
+          <div className="mt-12 bg-[#00011e] rounded-lg p-12">
+            <Heading text="Similar Artists" />
             <ArtistList artists={relatedArtists.artists} />
           </div>
         )}
