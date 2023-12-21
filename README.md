@@ -44,7 +44,21 @@ yarn deploy
 
 This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
 
-4. On a third terminal, start your NextJS app:
+4. Add Spotify Environment Variables:
+   
+To get NEXTAUTH_SECRET
+To create a secret key, open your terminal, run the command below, and copy the value generated to the .env file.
+
+``` openssl rand -base64 32 ```
+
+```
+SPOTIFY_CLIENT_SECRET=781ec8bfbbe3403d9c9acaa15699837b
+SPOTIFY_CLIENT_ID=723bfc611600444395db4ba9f7fd7e48
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=koCNMnSVyhNobUJEYrQ0ffiZb47bsn8XNzy3DhkFBrU=
+```
+
+5. On a third terminal, start your NextJS app:
 
 ```
 yarn start
