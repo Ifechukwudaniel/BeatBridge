@@ -11,6 +11,7 @@ export interface Album {
   images?: [Image];
   album_type?: string;
   release_date?: string;
+  total?: number;
   tracks?: {
     total: number;
     items: Track[];
@@ -24,7 +25,13 @@ export interface Artist {
   followers?: {
     total: number;
   };
+  popularity?: number;
   genres?: [string];
+}
+
+export interface Albums {
+  items: Album[];
+  total?: number;
 }
 
 export interface Track {
