@@ -1,21 +1,18 @@
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import { RiMusic2Fill } from "react-icons/ri";
-import ClaimNFT from "~~/components/ClaimNft";
 import DashboardLayout from "~~/components/dashboard/DashboardLayout";
 import AlbumList from "~~/components/spotify/AlbumList";
+import ArtistCard from "~~/components/spotify/ArtistCard";
 import ArtistList from "~~/components/spotify/ArtistList";
+import ClaimNFT from "~~/components/spotify/ClaimNft";
 import Heading from "~~/components/spotify/Heading";
 import Layout from "~~/components/spotify/Layout";
 import TracksTable from "~~/components/spotify/TracksTable";
 import { MySession } from "~~/types/session";
-import { Album, Artist, Track } from "~~/types/spotify";
+import { Albums, Artist, Track } from "~~/types/spotify";
 import { customGet } from "~~/utils/beat-bridge/customGet";
 import { isAuthenticated } from "~~/utils/beat-bridge/isAuthenticated";
-
-interface Albums {
-  items: Album[];
-}
 
 interface IProps {
   artist: Artist;
@@ -29,6 +26,7 @@ interface IProps {
   };
   userFollowsArtist?: boolean;
   userLikedTracks?: { added_at: string; track: Track }[];
+  totalFollowers?: number;
 }
 
 export default function SingleArtist({
@@ -49,7 +47,6 @@ export default function SingleArtist({
     }
 
     const currentArtistId = artist.id;
-    console.log(userLikedTracks);
     return userLikedTracks?.some(({ track }) => track.artists.some(artist => artist.id === currentArtistId));
   };
 
@@ -71,69 +68,17 @@ export default function SingleArtist({
               </div>
             )}
           </div>
-          <div className="container w-4/5 mx-auto">
-            <div className="flex justify-between items-center">
-              <div className="flex mb-4 gap-6">
-                <div className="text-center">
-                  <h1 className="text-2xl font-bold">22</h1>
-                  <p>Friends</p>
-                </div>
-                <div className="text-center">
-                  <h1 className="text-2xl font-bold">10</h1>
-                  <p>Badges</p>
-                </div>
-                <div className="text-center">
-                  <h1 className="text-2xl font-bold">89</h1>
-                  <p>Comments</p>
-                </div>
-              </div>
-
-              <div>
-                <button
-                  className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
-                    userFollowsArtist ? "hidden" : ""
-                  }`}
-                >
-                  Follow
-                </button>
-              </div>
-              <div>
-                <button
-                  className={`bg-lightgreen text-black px-8 py-2 rounded bg-[#9DFF94] text-sm font-bold ${
-                    userFollowsArtist ? "" : "hidden"
-                  }`}
-                >
-                  Unfollow
-                </button>
-              </div>
-            </div>
-
-            <div className="text-center py-8">
-              <h2 className="text-3xl">{artist.name}</h2>
-              <p className="text-sm uppercase mb-4">LOS ANGELES, CALIFORNIA</p>
-              <div className="rating rating-lg">
-                <input type="radio" name="rating-9" className="rating-hidden" />
-                <input type="radio" name="rating-9" className="mask mask-star-2  bg-[#9DFF94]" />
-                <input type="radio" name="rating-9" className="mask mask-star-2  bg-[#9DFF94] ml-3" checked />
-                <input type="radio" name="rating-9" className="mask mask-star-2  bg-[#9DFF94] ml-3" />
-                <input type="radio" name="rating-9" className="mask mask-star-2  bg-[#9DFF94] ml-3" />
-                <input type="radio" name="rating-9" className="mask mask-star-2  bg-[#9DFF94] ml-3" />
-              </div>
-              {/*   {isArtistLiked() && (
-                <div className="mt-8">
-                  <p>You liked this artists music!</p>
-                </div>
-              )} */}
-              <p className="mt-4 leading-[1.7]">
-                An artist of considerable range, Jenna the name taken by Melbourne-raised, Brooklyn-based Nick Murphy
-                writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove
-                structure. An artist of considerable range.
-                <span className="text-green-500 cursor-pointer block">Show More</span>
-              </p>
-            </div>
-          </div>
-
-          {/*  */}
+          <ArtistCard
+            name={artist.name}
+            followers={artist?.followers?.total || 0}
+            albums={artistAlbums?.total || 0}
+            location={"LOS ANGELES, CALIFORNIA"}
+            popularity={artist?.popularity || 0}
+            biography={`An artist of considerable range, Jenna the name taken by Melbourne-raised,
+            Brooklyn-based Nick Murphy writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure.
+            An artist of considerable range `}
+            following={userFollowsArtist}
+          />
           <ClaimNFT />
         </div>
         <div className="flex items-end gap-6 hidden">
