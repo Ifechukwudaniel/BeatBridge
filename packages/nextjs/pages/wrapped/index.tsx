@@ -1,24 +1,41 @@
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import DashboardLayout from "~~/components/dashboard/DashboardLayout";
+import ArtistList from "~~/components/spotify/ArtistList";
 import Heading from "~~/components/spotify/Heading";
 import Layout from "~~/components/spotify/Layout";
 import { MySession } from "~~/types/session";
-import { PlaylistType } from "~~/types/spotify";
+import { Artist } from "~~/types/spotify";
+import { customGet } from "~~/utils/beat-bridge/customGet";
 import { isAuthenticated } from "~~/utils/beat-bridge/isAuthenticated";
 
 interface IProps {
-  userPlaylist: PlaylistType[];
+  topArtists: Artist[];
 }
 
-export default function FollowedArtists({ userPlaylist }: IProps) {
-  console.log(userPlaylist);
+export default function ToArtists({ topArtists }: IProps) {
   return (
-    <DashboardLayout>
-      <Layout title="Beat Bridge - Your Wrapped">
-        <Heading text="Your Wrapped" />
-      </Layout>
-    </DashboardLayout>
+    <Layout title="Beat Bridge - Your Wrapped">
+      <DashboardLayout>
+        <Heading text="Your Artists" />
+        <select
+          name="time-range"
+          onChange={e => e.target.value}
+          className="mx-2 pr-1 bg-transparent border-none rounded cursor-pointer text-base p-2 "
+        >
+          <option className="text-black" value="short_term">
+            the last 4 weeks
+          </option>
+          <option className="text-black" value="medium_term">
+            the last 6 months
+          </option>
+          <option className="text-black" value="long_term">
+            all time
+          </option>
+        </select>
+        <ArtistList artists={topArtists} />
+      </DashboardLayout>
+    </Layout>
   );
 }
 
@@ -33,6 +50,12 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
       },
     };
   }
+  const timeRange = ctx.query.time_range || "long_term";
 
-  return { props: { userPlaylist: [] } };
+  const topArtists = await customGet(
+    `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}&limit=50`,
+    session,
+  );
+
+  return { props: { topArtists: topArtists.items } };
 };

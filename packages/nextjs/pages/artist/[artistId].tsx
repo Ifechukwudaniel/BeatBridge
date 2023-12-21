@@ -196,8 +196,8 @@ export default function SingleArtist({
         )}
 
         {relatedArtists?.artists.length > 0 && (
-          <div className="mt-12">
-            <Heading text="Fans also like" />
+          <div className="mt-12 bg-[#00011e] rounded-lg p-12">
+            <Heading text="Similar Artists" />
             <ArtistList artists={relatedArtists.artists} />
           </div>
         )}
